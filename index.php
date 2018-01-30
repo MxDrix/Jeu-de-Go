@@ -7,14 +7,12 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Le jeu de Go</title>
     </head>
     <body>
         <?php
-<<<<<<< HEAD
-=======
-        // put your code here
->>>>>>> 02958530426e07956e72ed85651644b88053a24b
+        include('./lib/goban.class.php');
+        new Goban(9);
         ?>
     </body>
 </html>
