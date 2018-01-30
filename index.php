@@ -6,7 +6,6 @@
     </head>
     <body>
         <?php
-        // ehrftdjgykhul;im
         ?>
     </body>
 </html>
