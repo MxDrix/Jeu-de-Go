@@ -11,8 +11,9 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include('./lib/goban.class.php');
-        new Goban(9);
+        include('lib/_autoloader.php');
+        $goban = new Goban(9);
+        $goban->placer_pierre(0, 8);
         ?>
     </body>
 </html>
