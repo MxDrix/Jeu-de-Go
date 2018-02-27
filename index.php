@@ -13,7 +13,13 @@ and open the template in the editor.
         <?php
         include('lib/_autoloader.php');
         $goban = new Goban(9);
-        $goban->placer_pierre(0, 8);
+        $goban->placer_pierre(0, 8, null);
+        $goban->placer_pierre(0, 7, null);
         ?>
+        <pre>
+            <?php
+            print_r($goban);
+            ?>
+        </pre>
     </body>
 </html>
