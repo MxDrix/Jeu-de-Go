@@ -28,7 +28,21 @@ class Goban {
 
         $pierre = new Pierre($abs, $ord, $joueur);
         $this->set_neightboors($pierre);
-        $this->_plateau[$abs][$ord] = $pierre;
+
+        if ($pierre->has_liberty()) {
+            $this->_plateau[$abs][$ord] = &$pierre;
+            $nb_pierre_capturees = 0;
+            foreach ($pierre->_voisins as &$voisin) {
+                if ($voisin != null && !($voisin->has_liberty())) {
+                    $nb_pierre_capturees = $voisin->capture_pierre($this->_plateau);
+                    $voisin = null;
+                }
+            }
+            return $nb_pierre_capturees;
+        } else {
+            $pierre = null;
+            return false; // Pas de case libre autour
+        }
     }
 
     private function set_neightboors(&$pierre) {

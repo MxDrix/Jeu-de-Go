@@ -7,5 +7,9 @@ class Joueur
     public $_nom;
     public $_poserPierre;
     public $_passer;
+    
+    public function __construct ($appartenance) {
+        $this->_appartenance = $appartenance;
+    }
 }
 ?>
