@@ -13,24 +13,6 @@
     <body>
         <div class="wrapper">
 
-            <?php
-            include('model/_autoloader.php');
-            $goban = new Goban(9);
-            $joueur1 = new Joueur(1);
-            $joueur2 = new Joueur(2);
-            $goban->placer_pierre(0, 8, $joueur1);
-            $goban->placer_pierre(0, 7, $joueur1);
-            $goban->placer_pierre(1, 8, $joueur2);
-            $goban->placer_pierre(1, 7, $joueur2);
-            $goban->placer_pierre(0, 6, $joueur2);
-            
-            ?>
-            <pre>
-                <?php
-                print_r($goban);
-                ?>
-            </pre>
-
             <table>
                 <?php
                 include('view/define_board.php')
@@ -38,6 +20,23 @@
             </table>
 
         </div>
+        <?php include('model/_autoloader.php'); ?>
+
+
+        <?php
+//        $goban = new Goban(9);
+//        $joueur1 = new Joueur(1);
+//        $joueur2 = new Joueur(2);
+//        $goban->placer_pierre(0, 8, $joueur1);
+//        $goban->placer_pierre(0, 7, $joueur1);
+//        $goban->placer_pierre(1, 8, $joueur2);
+//        $goban->placer_pierre(1, 7, $joueur2);
+//        $goban->placer_pierre(0, 6, $joueur2);
+//        echo '<pre>';
+//        print_r($goban);
+//        echo '</pre>';
+        ?>
+        
         <script src="controller/draw_board.js"></script>
     </body>
 </html>
