@@ -15,6 +15,10 @@ class Goban {
         }
     }
 
+    public function get_board() {
+        return $this->_plateau;
+    }
+
     public function placer_pierre($abs, $ord, $joueur) {
         // La case n'existe pas
         if ($abs >= $this->_taille || $ord >= $this->_taille) {
