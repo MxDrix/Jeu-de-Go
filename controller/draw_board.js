@@ -1,4 +1,5 @@
 function reussite(response, target) {
+	console.log(response);
 	if (response == 0) {
 		alert("Vous ne pouvez pas faire ça");
 	} else if (response == 1) {
@@ -24,15 +25,21 @@ $(document).ready(function(){
 
 
 	$("td").click(function (){
-	    var target = this.id;
+		var target = this.id;
+		var ord = $(this).data("ord");
+		var abs = $(this).data("abs");
+		console.log(ord);
+		console.log(abs);
 		$.ajax({
 			type: 'post',
-			url: 'http://bla-bla-bla-send-data.php',
-			data: {
-				id: target
+			url: 'http://localhost/myGoban/Jeu-de-Go/ajax-function.php',
+			data:'ord='+ord+'&abs='+abs,
+			success: function(data){
+				reussite(data, target);
 			},
-			success: reussite(response, target),
-			error: echec()
+			error: function(XMLHttpRequest, textStatus, errorThrown) { 
+				alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+			}       
 		})
 	});
 });
