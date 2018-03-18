@@ -52,7 +52,7 @@ class Pierre {
         return false;
     }
 
-    public function capture_pierre(&$board, $pierres_capturees = 0, $coming_from = null) {
+    public function capture_pierre(&$board, $pierres_capturees = array(), $coming_from = null) {
         foreach ($this->_voisins as $direction => &$voisin) {
             if ($direction == $coming_from) {
                 continue;
@@ -79,7 +79,8 @@ class Pierre {
             }
         }
         $board[$this->_abscisse][$this->_ordonnee] = null;
-        return $pierres_capturees + 1;
+        $pierres_capturees[] = ["abs" => $this->_abscisse, "ord" => $this->_ordonnee];
+        return $pierres_capturees;
     }
 
 }

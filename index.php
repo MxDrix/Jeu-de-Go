@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -15,28 +19,29 @@
 
             <table>
                 <?php
+                $taille_goban = 9;
                 include('view/define_board.php')
                 ?>
             </table>
 
         </div>
-        <?php include('model/_autoloader.php'); ?>
-
 
         <?php
-    //    $goban = new Goban(9);
-    //    $joueur1 = new Joueur(1,"");
-    //    $joueur2 = new Joueur(2);
-    //    $goban->placer_pierre(0, 8, $joueur1);
-    //    $goban->placer_pierre(0, 7, $joueur1);
-    //    $goban->placer_pierre(1, 8, $joueur2);
-    //    $goban->placer_pierre(1, 7, $joueur2);
-    //    $goban->placer_pierre(0, 6, $joueur2);
-    //    echo '<pre>';
-    // //    print_r($goban);
-    //    echo '</pre>';
-    //     ?>
-        
+        include('model/_autoloader.php');
+        $_SESSION['goban'] = new Goban($taille_goban);
+        $_SESSION['joueur1'] = new Joueur(1, "Richard");
+        $_SESSION['joueur2'] = new Joueur(2, "Renaud");
+        //    $goban->placer_pierre(0, 8, $joueur1);
+        //    $goban->placer_pierre(0, 7, $joueur1);
+        //    $goban->placer_pierre(1, 8, $joueur2);
+        //    $goban->placer_pierre(1, 7, $joueur2);
+        //    $goban->placer_pierre(0, 6, $joueur2);
+        //    echo '<pre>';
+        //    print_r($goban);
+        //    echo '</pre>';
+        //     
+        ?>
+
         <script src="controller/draw_board.js"></script>
     </body>
 </html>
