@@ -25,13 +25,13 @@ var joueur = "joueur1";
 
 $(document).ready(function () {
     $("#line-0").find("td").addClass("bottom-middle");
-    $("#line-12").find("td").addClass("top-middle");
+    $("#line-8").find("td").addClass("top-middle");
     $("#1-0, #2-0, #3-0, #4-0, #5-0, #6-0, #7-0, #8-0, #9-0, #10-0, #11-0").addClass("left-middle");
-    $("#1-12, #2-12, #3-12, #4-12, #5-12, #6-12, #7-12, #8-12, #9-12, #10-12, #11-12").addClass("right-middle");
+    $("#1-8, #2-8, #3-8, #4-8, #5-8, #6-8, #7-8, #8-8, #9-8, #10-8, #11-8").addClass("right-middle");
     $("#0-0").addClass("bottom-left");
-    $("#12-12").addClass("top-right");
-    $("#0-12").addClass("bottom-right");
-    $("#12-0").addClass("top-left");
+    $("#8-8").addClass("top-right");
+    $("#0-8").addClass("bottom-right");
+    $("#8-0").addClass("top-left");
 
 
 
